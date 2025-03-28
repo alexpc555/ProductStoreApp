@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './views/home/home.component';
+import { CartComponent } from './views/cart/cart.component';
+import { AboutComponent } from './views/about/about.component';
+import { ProductDetailsComponent } from './views/product-details/product-details.component';
+import { ProductsComponent } from './views/products/products.component';
+
+const routes: Routes = [
+  { path:'', component: HomeComponent, pathMatch: 'full'},
+  { path:'products', component: ProductsComponent, pathMatch: 'full'},
+  { path:'product/:id', component: ProductDetailsComponent, pathMatch: 'full'},
+  { path:'cart', component: CartComponent, pathMatch: 'full' },
+  { path:'about', component: AboutComponent, pathMatch: 'full' },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
